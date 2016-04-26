@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="net.pardeike.buildsettings"
+        version="0.0.1">
+
+  <name>BuildSettings</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+
+  <asset src="www/buildsettings.js" target="js/buildsettings.js"/>
+
+  <js-module src="www/buildsettings.js" name="buildsettings">
+    <clobbers target="buildsettings" />
+  </js-module>
+
+  <platform name="ios">
+
+    <config-file target="config.xml" parent="/widget">
+      <feature name="BuildSettings">
+        <param name="ios-package" value="BuildSettings" />
+      </feature>
+    </config-file>
+
+    <header-file src="src/ios/BuildSettings.h" target-dir="BuildSettingsPlugin"/>
+    <source-file src="src/ios/BuildSettings.m" target-dir="BuildSettingsPlugin"/>
+  </platform>
+
+</plugin>
