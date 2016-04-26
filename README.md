@@ -20,8 +20,12 @@ Install the plugin
 Edit `www/js/index.js` and add the following code inside `onDeviceReady`
 
 ```js
-	var result = buildsettings.get('somekey', 'default value');
-	alert(result);
+	buildsettings.get({
+		'somekey': 'default value'
+	}, function(defaults) {
+		var val = defaults['somekey'];
+		console.log(val);
+	});
 ```
 
 Install iOS platform

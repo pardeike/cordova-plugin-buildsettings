@@ -4,12 +4,21 @@
 
 - (void)getValue:(CDVInvokedUrlCommand*)command {
 	NSString* callbackId   = [command callbackId];
-	NSString* key          = [[command arguments] objectAtIndex:0];
-	NSString* defaultValue = [[command arguments] objectAtIndex:1];
+	NSDictionary *defaults = [[command arguments] objectAtIndex:0];
 
-	NSString *value = "test";
+	NSMutableDictionary* mergedResult = [NSMutableDictionary dictionaryWithDictionary:defaults];
+	NSDictionary *infoDictionary = [NSBundle mainBundle].infoDictionary;
 
-	CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsString:value];
+	NSEnumerator *enumerator = [defaults keyEnumerator];
+	id key;
+	while((key = [enumerator nextObject])) {
+		id infoValue = [infoDictionary objectForKey:key];
+		if(infoValue != nil) {
+			[mergedResult setObject:infoValue forKey:key];
+		}
+	}
+
+	CDVPluginResult* result = [CDVPluginResult resultWithStatus:CDVCommandStatus_OK messageAsDictionary:mergedResult];
 	[self.commandDelegate sendPluginResult:result callbackId:callbackId];
 }
 
