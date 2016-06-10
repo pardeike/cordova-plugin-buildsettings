@@ -4,4 +4,6 @@
 
 - (void)getValue:(CDVInvokedUrlCommand*)command;
 
+- (void)getUserID:(CDVInvokedUrlCommand*)command;
+
 @end
