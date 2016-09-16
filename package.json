@@ -1,10 +1,6 @@
 {
 	"name": "cordova-plugin-buildsettings",
-<<<<<<< HEAD
 	"version": "1.0.1",
-=======
-	"version": "1.0.0",
->>>>>>> origin/master
 	"description": "A plugin that gives your javascript access to build settings stored in XCode's Info.plist file",
 	"cordova": {
 		"id": "net.pardeike.buildsettings",
