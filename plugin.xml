@@ -1,40 +1,38 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
-        id="net.pardeike.buildsettings"
-        version="1.0.0">
+	id="net.pardeike.buildsettings"
+	version="1.0.1">
 
-  <name>BuildSettings</name>
+	<name>BuildSettings</name>
 
-  <description>
-    A plugin that stores a secret in the iOS keychain protected by Touch ID.
-  </description>
+	<description>
+		A plugin that gives your javascript access to build settings stored in XCode's Info.plist file
+	</description>
 
-  <author>Andreas Pardeike</author>
+	<author>Andreas Pardeike</author>
 
-  <license>MIT</license>
+	<license>MIT</license>
 
-  <repo>https://github.com/pardeike/cordova-plugin-touchpin</repo>
+	<repo>https://github.com/pardeike/cordova-plugin-buildsettings</repo>
 
-  <issue>https://github.com/pardeike/cordova-plugin-touchpin/issues</issue>
+	<issue>https://github.com/pardeike/cordova-plugin-buildsettings/issues</issue>
 
-  <engines>
-    <engine name="cordova" version=">=3.0.0"/>
-  </engines>
+	<engines>
+		<engine name="cordova" version=">=3.0.0"/>
+	</engines>
 
-  <js-module src="www/buildsettings.js" name="buildsettings">
-    <clobbers target="buildsettings" />
-  </js-module>
+	<js-module src="www/buildsettings.js" name="BuildSettings">
+		<clobbers target="buildsettings" />
+	</js-module>
 
-  <platform name="ios">
-
-    <config-file target="config.xml" parent="/*">
-      <feature name="BuildSettings">
-        <param name="ios-package" value="BuildSettings" />
-      </feature>
-    </config-file>
-
-    <header-file src="src/ios/BuildSettings.h" target-dir="BuildSettingsPlugin"/>
-    <source-file src="src/ios/BuildSettings.m" target-dir="BuildSettingsPlugin"/>
-  </platform>
+	<platform name="ios">
+		<config-file target="config.xml" parent="/*">
+			<feature name="BuildSettings">
+				<param name="ios-package" value="BuildSettings" />
+			</feature>
+		</config-file>
+		<header-file src="src/ios/BuildSettings.h" target-dir="BuildSettingsPlugin"/>
+		<source-file src="src/ios/BuildSettings.m" target-dir="BuildSettingsPlugin"/>
+	</platform>
 
 </plugin>
