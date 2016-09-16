@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
         id="net.pardeike.buildsettings"
-        version="0.9.0">
+        version="1.0.0">
 
   <name>BuildSettings</name>
 
-  <engines>
-    <engine name="cordova" version=">=3.4.0"/>
-  </engines>
+  <description>
+    A plugin that stores a secret in the iOS keychain protected by Touch ID.
+  </description>
 
-  <asset src="www/buildsettings.js" target="js/buildsettings.js"/>
+  <author>Andreas Pardeike</author>
+
+  <license>MIT</license>
+
+  <repo>https://github.com/pardeike/cordova-plugin-touchpin</repo>
+
+  <issue>https://github.com/pardeike/cordova-plugin-touchpin/issues</issue>
+
+  <engines>
+    <engine name="cordova" version=">=3.0.0"/>
+  </engines>
 
   <js-module src="www/buildsettings.js" name="buildsettings">
     <clobbers target="buildsettings" />
@@ -17,7 +27,7 @@
 
   <platform name="ios">
 
-    <config-file target="config.xml" parent="/widget">
+    <config-file target="config.xml" parent="/*">
       <feature name="BuildSettings">
         <param name="ios-package" value="BuildSettings" />
       </feature>

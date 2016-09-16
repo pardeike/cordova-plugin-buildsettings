@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-buildsettings",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "A plugin that gives your javascript access to build settings stored in XCode's Info.plist file",
   "cordova": {
     "id": "net.pardeike.buildsettings",
@@ -19,11 +19,11 @@
   "engines": [
     {
       "name": "cordova",
-      "version": ">=3.4.0"
+      "version": ">=3.0.0"
     }
   ],
   "author": "Andreas Pardeike",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/pardeike/cordova-plugin-buildsettings/issues"
   },
